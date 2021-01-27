@@ -5,6 +5,7 @@ const path = require("path");
 module.exports = {
   entry: "./src/index",
   mode: "development",
+  target: "web",
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     port: 3002,
@@ -31,6 +32,7 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         "./Button": "./src/Button",
+        "./Table": "./src/Table",
       },
       shared: { react: { singleton: true }, "react-dom": { singleton: true } },
     }),
